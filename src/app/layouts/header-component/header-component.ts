@@ -10,6 +10,7 @@ import { Router, RouterModule } from '@angular/router';
 
 
 export class HeaderComponent {
+  isMenuOpen = false; // Track menu state
   constructor(private router: Router) {}
 
   navigateToLogin(){
