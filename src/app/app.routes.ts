@@ -1,6 +1,14 @@
 import { Routes } from '@angular/router';
-import { SectionComponent } from './section-component/section-component';
+import { HomeComponent } from './home-component/home-component';
+import { LoginComponent } from './auth/login/login';
+import { SignupComponent } from './auth/signup/signup';
+import { CloudTabsComponent } from './cloud-tabs-component/cloud-tabs-component';
 
 export const routes: Routes = [
-    { path: '', component: SectionComponent }, 
+    {path: '', redirectTo: '/home', pathMatch: 'full'},
+    { path: 'home', component: HomeComponent }, 
+    { path: 'login', component: LoginComponent },
+    { path: 'signup', component: SignupComponent },
+    {path: 'features', component: CloudTabsComponent},
+    {path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];

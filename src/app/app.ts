@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './layouts/header-component/header-component';
 import { FooterComponent } from "./layouts/footer-component/footer-component";
 
@@ -11,4 +11,12 @@ import { FooterComponent } from "./layouts/footer-component/footer-component";
 })
 export class App {
   protected title = 'beaverops-landing-page';
+  constructor(private router: Router) {
+  this.router.events.subscribe((event) => {
+    if (event instanceof NavigationEnd) {
+      window.scrollTo({ top: 0  ,behavior: 'smooth'});
+    }
+  });
+}
+
 }

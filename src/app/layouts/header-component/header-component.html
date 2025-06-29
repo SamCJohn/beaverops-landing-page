@@ -1,12 +1,11 @@
 <header class="header">
   <div class="container">
-    <div class="logo">
+    <div class="logo" (click)="navigateToHome()">
       <img src="https://dummyimage.com/100x40/eee/000&text=BeaverOps" alt="Logo" />
-
-    </div>
+  </div>
 
     <nav class="nav-links">
-      <a routerLink="/">Home</a>
+      <a routerLink="/home">Home</a>
       <a routerLink="/features">Features</a>
       <a routerLink="/pricing">Pricing</a>
       <a routerLink="/contact">Contact</a>
