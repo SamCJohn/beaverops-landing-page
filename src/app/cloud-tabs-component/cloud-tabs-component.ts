@@ -9,8 +9,8 @@ import { CloudProvider, Card } from '../models/cloud-provider.model';
   styleUrl: './cloud-tabs-component.css'
 })
 export class CloudTabsComponent {
-cloudProviders: CloudProvider[] = ['AWS', 'Microsoft Azure', 'Google Cloud'];
-selectedProvider: CloudProvider = 'AWS';
+cloudProviders: CloudProvider[] = ['Microsoft Azure','AWS', 'Google Cloud'];
+selectedProvider: CloudProvider = 'Microsoft Azure';
 
 
 cards :Record<CloudProvider, Card[]> = {

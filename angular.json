@@ -13,10 +13,8 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "docs/browser",
-            "baseHref": "/beaverops-landing-page/",
-            "index": "src/index.html",
             "browser": "src/main.ts",
+            "outputPath": "dist/beaverops-landing-page",
             "polyfills": [
               "zone.js"
             ],
@@ -88,6 +86,9 @@
               "src/styles.css"
             ]
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     }
