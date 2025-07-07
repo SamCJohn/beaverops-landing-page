@@ -4,6 +4,7 @@ import { LoginComponent } from './auth/login/login';
 import { SignupComponent } from './auth/signup/signup';
 import { CloudTabsComponent } from './cloud-tabs-component/cloud-tabs-component';
 import { PricingComponent } from './pricing-component/pricing-component';
+import { ContactComponent } from './contact-component/contact-component';
 
 export const routes: Routes = [
     {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -12,5 +13,6 @@ export const routes: Routes = [
     { path: 'signup', component: SignupComponent },
     {path: 'features', component: CloudTabsComponent},
     { path: 'pricing', component: PricingComponent },
+    { path: 'contact', component: ContactComponent},
     {path: '**', redirectTo: '/home', pathMatch: 'full'}
 ];

@@ -50,7 +50,21 @@
   gap: 2rem;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 }
-
+.pricing-section .pricing-grid .setup-note {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  color: #475569;
+}
+.pricing-section .pricing-grid .full-width {
+  grid-column: 1 / -1;
+}
+.pricing-section .pricing-grid .setup-note .text-orange {
+  color: #f97316; /* or your theme's orange */
+}
+.pricing-section .pricing-grid .setup-note  .me-1 {
+  margin-right: 0.5rem;
+}
 .pricing-section .pricing-card {
   background: white;
   border: 1px solid #e5e7eb;
@@ -142,3 +156,55 @@
     }
   }
 }
+.performance-section {
+  margin-top: 2rem;
+}
+
+.performance-block {
+  flex: 1;
+  min-width: 280px;
+  padding: 1rem;
+  background-color: #fff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.pricing-split {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
+}
+
+
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+.pricing-table th,
+.pricing-table td {
+  border: 1px solid #e2e8f0;
+  padding: 0.75rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.pricing-table th {
+  background-color: #f9fafb;
+  color: #1e293b;
+}
+
+.pricing-table td {
+  color: #334155;
+}
+
+.billing-note {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
