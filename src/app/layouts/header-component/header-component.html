@@ -1,7 +1,7 @@
 <header class="header">
   <div class="container">
     <div class="logo" (click)="navigateToHome()">
-      <img src="https://dummyimage.com/100x40/eee/000&text=BeaverOps" alt="Logo" />
+      <img src="https://dummyimage.com/100x40/eee/000&text=EffiOps" alt="Logo" />
   </div>
 <!-- Hamburger / Close toggle button -->
 <button class="menu-toggle" (click)="isMenuOpen = !isMenuOpen">
@@ -11,7 +11,7 @@
 <!-- Navigation menu -->
 <nav class="nav-links" [class.open]="isMenuOpen">
   <a routerLink="/home" (click)="isMenuOpen = false">Home</a>
-  <a routerLink="/features" (click)="isMenuOpen = false">Features</a>
+  <a routerLink="/features" (click)="isMenuOpen = false">Why EffiOps?</a>
   <a routerLink="/pricing" (click)="isMenuOpen = false">Pricing</a>
   <a routerLink="/contact" (click)="isMenuOpen = false">Contact</a>
 </nav>

@@ -1,21 +1,59 @@
+<section class="hero-section why-effiops">
+  <div class="content">
+    <div class="text-content">
+      <h2>Why Choose EffiOps?</h2>
+      <p class="tagline">The smarter, simpler way to optimize your cloud spending and operations.</p>
+
+      <div class="features">
+        <div class="feature-box">
+          <i class="fas fa-bolt"></i>
+          <h4>Lightning Fast Analysis</h4>
+          <p>Get insights in seconds with real-time cost and usage data.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-brain"></i>
+          <h4>AI-Driven Optimization</h4>
+          <p>Let machine learning suggest smart actions for efficiency.</p>
+        </div>
+        <div class="feature-box">
+          <i class="fas fa-lock"></i>
+          <h4>Enterprise Grade Security</h4>
+          <p>We prioritize your data integrity and cloud safety.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="illustration">
+      <img src="projection.svg" alt="Why EffiOps Illustration" />
+    </div>
+  </div>
+</section>
+
+
+
+
+
 <section class="tabs-section">
   <div class="tabs">
-    <button 
-      *ngFor="let provider of cloudProviders" 
-      [class.active]="provider === selectedProvider"
+    <button *ngFor="let provider of cloudProviders" [class.active]="provider === selectedProvider"
       (click)="selectProvider(provider)">
       {{ provider }}
     </button>
   </div>
 
-<div *ngIf="selectedProviderDetails?.isAvailable; else comingSoon">
-  <div class="categories-container">
-    <div *ngFor="let category of selectedProviderDetails?.categories" class="category-block">
-      
-      <h2 class="category-title">{{ category.name }}</h2>
+  <div *ngIf="selectedProviderDetails?.isAvailable; else comingSoon">
+    <div class="categories-container">
+      <div class="filter-container">
+        <label for="categoryFilter"><i class="fas fa-filter"></i> Filter by Category:</label>
+        <select id="categoryFilter" [(ngModel)]="selectedCategory">
+          <option value="">All</option>
+          <option *ngFor="let cat of availableCategories" [value]="cat">{{ cat }}</option>
+        </select>
+      </div>
 
       <div class="card-grid">
-        <div class="feature-card" *ngFor="let card of category.services">
+        <div class="feature-card"
+          *ngFor="let card of (selectedProviderDetails?.services || []) | categoryFilter:selectedCategory">
           <div class="icon">
             <i [class]="card.icon"></i>
           </div>
@@ -23,15 +61,14 @@
           <p>{{ card.description }}</p>
         </div>
       </div>
-      <hr class="category-divider" />
+
     </div>
   </div>
-</div>
 
-<ng-template #comingSoon>
-  <div class="coming-soon">
-    <h3><i class="fas fa-tools me-2"></i>Coming Soon</h3>
-    <p>Support for {{ selectedProvider }} is under development. Stay tuned!</p>
-  </div>
-</ng-template>
+  <ng-template #comingSoon>
+    <div class="coming-soon">
+      <h3><i class="fas fa-tools me-2"></i>Coming Soon</h3>
+      <p>Support for {{ selectedProvider }} is under development. Stay tuned!</p>
+    </div>
+  </ng-template>
 </section>
